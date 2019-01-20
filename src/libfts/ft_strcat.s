@@ -2,20 +2,23 @@ global _ft_strcat
 
 _ft_strcat:
 start:
-	cmp byte [rdi], 0
-	je append
-	inc rdi
-	jmp start
+	push rdi
 
-append:
-	cmp byte [rsi], 0
+toend:
+	cmp byte [rdi], 0x0
+	je concat
+	inc rdi
+	jmp toend
+
+concat:
+	cmp byte [rsi], 0x0
 	je end
-	mov al, byte [rsi]
-	mov byte [rdi], al
+	mov r8, [rsi]
+	mov [rdi], r8
 	inc rdi
 	inc rsi
-	jmp append
+	jmp concat
 
 end:
-	mov byte [rdi], 0
+	pop rax
 	ret

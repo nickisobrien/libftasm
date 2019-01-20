@@ -19,6 +19,7 @@ int		ts_isprint(void);
 int		ts_strlen(void);
 int		ts_memset(void);
 int		ts_memcpy(void);
+int		ts_strdup(void);
 
 void	ft_bzero(void *s, size_t n);
 int		ft_tolower(char c);
@@ -32,5 +33,6 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+char	*ft_strdup(const char *s1);
 
 #endif

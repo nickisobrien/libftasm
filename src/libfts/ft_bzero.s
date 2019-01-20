@@ -1,14 +1,11 @@
+extern _ft_memset
+
 global _ft_bzero
 
 _ft_bzero:
-
 start:
-	cmp rsi, 0
-	je  end
-	mov byte [rdi], 0
-	inc rdi
-	dec rsi
-	jmp start
-
+	mov rdx, rsi
+	mov rsi, 0
+	call _ft_memset
 end:
 	ret

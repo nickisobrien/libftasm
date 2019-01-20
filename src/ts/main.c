@@ -32,7 +32,7 @@ int		main(void)
 	else
 		printf("FAILED\n");
 
-	printf("Testing isdigit:");
+	printf("Testing isdigit: ");
 	if (!ts_isdigit())
 		printf("passed\n");
 	else
@@ -70,6 +70,12 @@ int		main(void)
 
 	printf("Testing memcpy: ");
 	if (!ts_memcpy())
+		printf("passed\n");
+	else
+		printf("FAILED\n");
+
+	printf("Testing strdup: ");
+	if (!ts_strdup())
 		printf("passed\n");
 	else
 		printf("FAILED\n");

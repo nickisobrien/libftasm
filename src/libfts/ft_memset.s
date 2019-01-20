@@ -1,18 +1,14 @@
 global _ft_memset
 
-_ft_memset:
-init:
-	mov rax, rdx
-	mov dl, sil
-	jmp loop
+section .text
 
-loop:
-	cmp rax, 0x0
-	je end
-	mov byte [rdi], dl
-	inc rdi
-	dec rax
-	jmp loop
+_ft_memset:
+	push rdi ; dest pushed
+	mov rax, rsi ; character moved to rax
+	mov rcx, rdx ; length moved to rcx
+	cld ; clear direction flag
+	rep stosb ; repeat till rcx = 0 Store AL (8 bits of rax (the character we're using)) at address ES:(R)DI
 
 end:
+	pop rax ; return value
 	ret

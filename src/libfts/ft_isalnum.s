@@ -8,6 +8,7 @@ _ft_isalnum:
 	cmp rax, 0x1
 	je alnum
 	call _ft_isdigit
+	cmp rax, 0x1
 	je alnum
 	jmp not_alnum
 

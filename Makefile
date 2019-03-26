@@ -4,7 +4,7 @@ CFLAGS := -Wall -Wextra -Werror -I include/libfts -I include/ts
 
 CFILES :=	main.c ts_bzero.c ts_tolower.c ts_toupper.c ts_strcat.c ts_isalpha.c \
 			ts_isdigit.c ts_isalnum.c ts_isascii.c ts_isprint.c ts_strlen.c \
-			ts_memset.c ts_memcpy.c ts_strdup.c \
+			ts_memset.c ts_memcpy.c ts_strdup.c ts_puts.c \
 
 CSRC := $(addprefix src/ts/, $(CFILES))
 
@@ -14,7 +14,7 @@ NASMFLAGS := -f macho64
 
 ASMFILES :=	ft_bzero.s ft_tolower.s ft_toupper.s ft_strcat.s ft_isalpha.s \
 			ft_isdigit.s ft_isalnum.s ft_isascii.s ft_isprint.s ft_strlen.s \
-			ft_memset.s ft_memcpy.s ft_strdup.s \
+			ft_memset.s ft_memcpy.s ft_strdup.s ft_puts.s \
 
 ASMSRC := $(addprefix src/libfts/, $(ASMFILES))
 

@@ -1,6 +1,10 @@
 global _ft_memcpy
 
 _ft_memcpy:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 	push rdi
 	mov rcx, rdx
 	cld
@@ -8,4 +12,6 @@ _ft_memcpy:
 
 end:
 	pop rax
+	mov rsp, rbp
+	pop rbp
 	ret

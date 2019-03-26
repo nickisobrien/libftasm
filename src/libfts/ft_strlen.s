@@ -1,6 +1,10 @@
 global _ft_strlen
 
 _ft_strlen:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 init:
 	mov rax, 0
 
@@ -11,4 +15,6 @@ start:
 	jmp start
 
 end:
+	mov rsp, rbp
+	pop rbp
 	ret

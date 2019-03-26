@@ -7,6 +7,7 @@ global _ft_strdup
 section .text
 
 _ft_strdup:
+prologue:
 	push rbp ; save base pointer to stack
 	mov rbp, rsp ; put previous stack pointer into base pointer
 

@@ -1,6 +1,10 @@
 global _ft_strcat
 
 _ft_strcat:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 start:
 	push rdi
 
@@ -21,4 +25,6 @@ concat:
 
 end:
 	pop rax
+	mov rsp, rbp
+	pop rbp
 	ret

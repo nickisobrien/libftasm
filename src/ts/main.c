@@ -80,5 +80,8 @@ int		main(void)
 	else
 		printf("FAILED\n");
 
+	printf("Testing puts: ");
+	ts_puts();
+
 	return (0);
 }

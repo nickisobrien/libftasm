@@ -4,6 +4,11 @@ extern _ft_isdigit
 global _ft_isalnum
 
 _ft_isalnum:
+
+prologue:
+	push rbp
+	mov rbp, rsp
+
 	call _ft_isalpha
 	cmp rax, 0x1
 	je alnum
@@ -14,8 +19,13 @@ _ft_isalnum:
 
 alnum:
 	mov rax, 1
-	ret
+	jmp end
 
 not_alnum:
 	mov rax, 0
+	jmp end
+
+end:
+	mov rsp, rbp
+	pop rbp
 	ret

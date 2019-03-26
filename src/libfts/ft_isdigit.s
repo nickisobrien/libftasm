@@ -1,6 +1,10 @@
 global _ft_isdigit
 
 _ft_isdigit:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 	mov rax, rdi
 	cmp rax, 0x30
 	jl not_digit
@@ -10,8 +14,13 @@ _ft_isdigit:
 
 digit:
 	mov rax, 1
-	ret
+	jmp end
 
 not_digit:
 	mov rax, 0
+	jmp end
+
+end:
+	mov rsp, rbp
+	pop rbp
 	ret

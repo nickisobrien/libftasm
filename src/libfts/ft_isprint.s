@@ -1,6 +1,10 @@
 global _ft_isprint
 
 _ft_isprint:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 start:
 	mov rax, rdi
 	cmp rax, 0x20
@@ -11,8 +15,13 @@ start:
 
 print:
 	mov rax, 1
-	ret
+	jmp end
 
 not_print:
 	mov rax, 0
+	jmp end
+
+end:
+	mov rsp, rbp
+	pop rbp
 	ret

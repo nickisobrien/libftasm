@@ -1,6 +1,10 @@
 global _ft_isascii
 
 _ft_isascii:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 start:
 	mov rax, rdi
 	cmp rax, 0x0
@@ -11,8 +15,13 @@ start:
 
 ascii:
 	mov rax, 1
-	ret
+	jmp end
 
 not_ascii:
 	mov rax, 0
+	jmp end
+
+end:
+	mov rsp, rbp
+	pop rbp
 	ret

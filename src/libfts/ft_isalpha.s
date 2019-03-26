@@ -1,6 +1,10 @@
 global _ft_isalpha
 
 _ft_isalpha:
+prologue:
+	push rbp
+	mov rbp, rsp
+
 start:
 	mov rax, rdi
 	cmp rax, 0x61
@@ -18,8 +22,13 @@ checkupper:
 	
 alpha:
 	mov rax, 1
-	ret
+	jmp end
 
 not_alpha:
 	mov rax, 0
+	jmp end
+
+end:
+	mov rsp, rbp
+	pop rbp
 	ret
